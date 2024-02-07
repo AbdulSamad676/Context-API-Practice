@@ -1,15 +1,22 @@
-import { useState } from 'react';
-import reactLogo from './assets/react.svg';
-import viteLogo from '/vite.svg';
-import './App.css';
+import UserContextProvider from './Context/UserContextProvider';
+import Login from './components/Login';
+import { Profile } from './components/Profile';
 
 function App() {
-	const [count, setCount] = useState(0);
+	// Importatn Note!
+	//useContext is actually the main accessing material
+	//esky through ham data bej b sakty hai receive b kar sakty hai
 
 	return (
-		<>
-			<h3>Context API</h3>
-		</>
+		// Step 3
+		// Wrap the whole data in ContextProvider
+		<UserContextProvider>
+			<div style={{ textAlign: 'center' }}>
+				<h3>Context API with Chai aur Code</h3>
+				<Login />
+				<Profile />
+			</div>
+		</UserContextProvider>
 	);
 }
 
